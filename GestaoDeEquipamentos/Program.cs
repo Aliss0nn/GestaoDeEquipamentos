@@ -73,7 +73,7 @@ namespace GestaoEquipamentos.ConsoleApp
             }
             else if (opcaoCadastroChamados == "4")
             {
-                //Excluir um equipamento existente
+              
                 ExcluirChamado();
             }
         }
@@ -143,8 +143,9 @@ namespace GestaoEquipamentos.ConsoleApp
 
         }
 
-        static bool VisualizarChamados(bool v)
-        {          
+        static bool VisualizarChamados(bool MostrarCabecalho)
+        {      
+            if (MostrarCabecalho)    
                 MostrarCabecalho("Cadastro de Chamados", "Visualizando os Chamados: ");
 
             if (listaIdsChamado.Count == 0)
@@ -162,7 +163,7 @@ namespace GestaoEquipamentos.ConsoleApp
 
             for (int i = 0; i < listaIdsChamado.Count; i++)
             {
-                Console.WriteLine("{0,-10} | {1,-40} | {2,-30}",
+                Console.WriteLine("{0,-10} | {1,-40} | {2,-30} | {3,-20}")
                     listaIdsEquipamentoChamado[i], listaNomesEquipamento[i], DescricoesChamado[i], DatasAberturaChamado[i] );
             }
 
